@@ -1,63 +1,300 @@
-/* public/assets/style.css */
+/* public/assets/style.css - Theme: Aesthetic Warm Cafe */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8fafc;
-    color: #0f172a;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #faf7f2; /* Warm Latte / Soft Cream */
+    color: #3c2a21; /* Espresso Brown */
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1080px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
+/* Header Cafe */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-bottom: 2px dashed #e8dfd5;
+    padding-bottom: 20px;
+}
+
+.header-section h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c1810;
+    letter-spacing: -0.5px;
+}
+
+/* Form Search Aesthetic */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 16px;
+    border: 1px solid #ebd9cb;
+    box-shadow: 0 4px 15px rgba(60, 42, 33, 0.04);
+}
+
+.search-form input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: #faf7f2;
+    color: #3c2a21;
+    transition: all 0.2s ease;
+}
+
+.search-form input:focus {
+    background-color: #ffffff;
+    border-color: #d0b8a6;
+    box-shadow: 0 0 0 3px rgba(208, 184, 166, 0.2);
+}
+
+/* Alert Notifikasi */
+.alert {
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.alert-success {
+    background-color: #f1f7ed;
+    border: 1px solid #c3e2b4;
+    color: #3b6628;
+}
+
+.alert-danger {
+    background-color: #fdf2f2;
+    border: 1px solid #f8c4c4;
+    color: #9b2c2c;
+}
+
+/* Flexbox Grid Card Produk (Tampilan Berjejer Menyamping) */
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Card Produk Theme Cafe */
 .card {
     background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 12px;
+    border: 1px solid #f0e6dd;
+    border-radius: 20px;
     padding: 24px;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    box-shadow: 0 8px 20px rgba(60, 42, 33, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card {
+    flex: 1 1 280px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #d0b8a6, #8d7b68);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(60, 42, 33, 0.08);
+    border-color: #d0b8a6;
+}
+
+.product-card h3 {
+    margin: 10px 0 6px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c1810;
+}
+
+.category-badge {
+    align-self: flex-start;
+    background-color: #f5efe6;
+    color: #8d7b68;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: 1px solid #e8dfd5;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 22px;
+    color: #8d7b68;
+    margin: 12px 0 4px 0;
+}
+
+.stock {
+    font-size: 13px;
+    color: #8c7a6b;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.stock-empty {
+    color: #c85a5a;
+    font-weight: 700;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed #f0e6dd;
+}
+
+.card-actions form {
+    flex: 1;
+}
+
+/* Button Styling (Warm Cafe Style) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #3c2a21; /* Dark Espresso */
+    color: #faf7f2;
+    box-shadow: 0 4px 12px rgba(60, 42, 33, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #1a100a;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #8d7b68;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #756453;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1.5px solid #d0b8a6;
+    color: #3c2a21;
+    width: 100%;
+}
+
+.btn-outline:hover {
+    background-color: #f5efe6;
+    border-color: #8d7b68;
+}
+
+.btn-sm {
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    background-color: #fff2f2;
+    color: #c85a5a;
+    border: 1px solid #f8c4c4;
+    width: 100%;
+}
+
+.btn-danger:hover {
+    background-color: #c85a5a;
+    color: #ffffff;
+}
+
+/* Form Card (Create & Edit) */
+.form-card {
+    max-width: 520px;
+    margin: 20px auto 0;
 }
 
 .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .form-group label {
-    margin-bottom: 6px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #3c2a21;
 }
 
 .form-group input {
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    padding: 12px 16px;
+    border: 1px solid #ebd9cb;
+    border-radius: 12px;
     font-size: 14px;
+    outline: none;
+    background-color: #faf7f2;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    background-color: #ffffff;
+    border-color: #8d7b68;
+    box-shadow: 0 0 0 3px rgba(141, 123, 104, 0.2);
 }
 
 .error-text {
-    color: #dc2626;
+    color: #c85a5a;
     font-size: 12px;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
+.empty-state {
+    width: 100%;
+    text-align: center;
+    padding: 48px 24px;
+    color: #8c7a6b;
+    font-style: italic;
 }
-
-.btn-primary { background-color: #2563eb; color: #fff; }
-.btn-secondary { background-color: #64748b; color: #fff; margin-bottom: 20px; }
-.alert-danger { background-color: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; padding: 12px; border-radius: 6px; margin-bottom: 16px; }
